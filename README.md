@@ -9,3 +9,7 @@ The repository is organized by following chapters of the thesis:
 * The forth chapter, which proposes encoding and deconding mechanisms while evaluating error probabilities.
 
 ![Example Barcode](./barcode.png)
+
+## Contact
+
+Questions and comments can be sent to kloeck[at]pappuga[dot]com
