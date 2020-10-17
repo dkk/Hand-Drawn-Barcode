@@ -1,6 +1,6 @@
 # Hand-Drawn-Barcode
 
-This repository is related to the master thesis submitted in partial fulfillment of the requirements for the degree of "Master in Artificial Intelligence and Depp Learning" at the University at Alcalá by Daniel Klöck in October 2020.
+This repository is related to the master thesis "A Hand-Drawn Barcode", submitted in partial fulfillment of the requirements for the degree of "Master in Artificial Intelligence and Depp Learning" at the University at Alcalá by Daniel Klöck on October 2020.
 
 The repository is organized by following chapters of the thesis:
 
