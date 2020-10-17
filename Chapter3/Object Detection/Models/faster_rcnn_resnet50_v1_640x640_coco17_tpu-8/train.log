@@ -1,0 +1,367 @@
+(tensorflow) C:\Users\Thesis\Desktop\tensorflow\workspace\training_demo>python ../../models/research/object_detection/model_main_tf2.py --alsologtostderr --model_dir=models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8 --checkpoint_every_n=200 --pipeline_config_path=models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/pipeline.config
+2020-09-22 11:35:37.686567: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+2020-09-22 11:35:39.945836: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library nvcuda.dll
+2020-09-22 11:35:40.009730: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1070 computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 15 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 238.66GiB/s
+2020-09-22 11:35:40.009849: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+2020-09-22 11:35:40.014356: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_10.dll
+2020-09-22 11:35:40.017788: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cufft64_10.dll
+2020-09-22 11:35:40.018915: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library curand64_10.dll
+2020-09-22 11:35:40.022951: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusolver64_10.dll
+2020-09-22 11:35:40.025315: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusparse64_10.dll
+2020-09-22 11:35:40.033135: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudnn64_7.dll
+2020-09-22 11:35:40.033716: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2020-09-22 11:35:40.034194: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-09-22 11:35:40.040749: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x236f6926df0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-09-22 11:35:40.040852: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-09-22 11:35:40.041924: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1070 computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 15 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 238.66GiB/s
+2020-09-22 11:35:40.042015: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+2020-09-22 11:35:40.042377: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_10.dll
+2020-09-22 11:35:40.043058: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cufft64_10.dll
+2020-09-22 11:35:40.043398: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library curand64_10.dll
+2020-09-22 11:35:40.043727: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusolver64_10.dll
+2020-09-22 11:35:40.044077: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusparse64_10.dll
+2020-09-22 11:35:40.044403: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudnn64_7.dll
+2020-09-22 11:35:40.045088: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2020-09-22 11:35:40.629969: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-09-22 11:35:40.630083: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0
+2020-09-22 11:35:40.630965: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N
+2020-09-22 11:35:40.631907: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6720 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-09-22 11:35:40.634189: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x236a5901b90 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-09-22 11:35:40.634267: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 1070, Compute Capability 6.1
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0',)
+I0922 11:35:40.635779  4980 mirrored_strategy.py:341] Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0',)
+INFO:tensorflow:Maybe overwriting train_steps: None
+I0922 11:35:40.639767  4980 config_util.py:552] Maybe overwriting train_steps: None
+INFO:tensorflow:Maybe overwriting use_bfloat16: False
+I0922 11:35:40.639767  4980 config_util.py:552] Maybe overwriting use_bfloat16: False
+WARNING:tensorflow:num_readers has been reduced to 1 to match input file shards.
+W0922 11:35:40.901069  4980 dataset_builder.py:82] num_readers has been reduced to 1 to match input file shards.
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\builders\dataset_builder.py:96: parallel_interleave (from tensorflow.python.data.experimental.ops.interleave_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.interleave(map_func, cycle_length, block_length, num_parallel_calls=tf.data.experimental.AUTOTUNE)` instead. If sloppy execution is desired, use `tf.data.Options.experimental_deterministic`.
+W0922 11:35:40.903064  4980 deprecation.py:317] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\builders\dataset_builder.py:96: parallel_interleave (from tensorflow.python.data.experimental.ops.interleave_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.interleave(map_func, cycle_length, block_length, num_parallel_calls=tf.data.experimental.AUTOTUNE)` instead. If sloppy execution is desired, use `tf.data.Options.experimental_deterministic`.
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\builders\dataset_builder.py:174: DatasetV1.map_with_legacy_function (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.map()
+W0922 11:35:40.932983  4980 deprecation.py:317] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\builders\dataset_builder.py:174: DatasetV1.map_with_legacy_function (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.map()
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\dispatch.py:201: sparse_to_dense (from tensorflow.python.ops.sparse_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Create a `tf.sparse.SparseTensor` and use `tf.sparse.to_dense` instead.
+W0922 11:35:46.016477  4980 deprecation.py:317] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\dispatch.py:201: sparse_to_dense (from tensorflow.python.ops.sparse_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Create a `tf.sparse.SparseTensor` and use `tf.sparse.to_dense` instead.
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\dispatch.py:201: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+W0922 11:35:47.209790  4980 deprecation.py:500] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\dispatch.py:201: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\inputs.py:259: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W0922 11:35:48.388660  4980 deprecation.py:317] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\inputs.py:259: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\model_lib_v2.py:355: set_learning_phase (from tensorflow.python.keras.backend) is deprecated and will be removed after 2020-10-11.
+Instructions for updating:
+Simply pass a True/False value to the `training` argument of the `__call__` method of your layer or model.
+W0922 11:36:15.498261 11524 deprecation.py:317] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\model_lib_v2.py:355: set_learning_phase (from tensorflow.python.keras.backend) is deprecated and will be removed after 2020-10-11.
+Instructions for updating:
+Simply pass a True/False value to the `training` argument of the `__call__` method of your layer or model.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0922 11:36:19.351528 11524 convolutional_keras_box_predictor.py:153] depth of additional conv before box predictor: 0
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\utils\model_util.py:57: Tensor.experimental_ref (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use ref() instead.
+W0922 11:36:24.789067 11524 deprecation.py:317] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\utils\model_util.py:57: Tensor.experimental_ref (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use ref() instead.
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\dispatch.py:201: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0922 11:36:28.486241 11524 deprecation.py:317] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\dispatch.py:201: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+2020-09-22 11:36:39.646786: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_10.dll
+2020-09-22 11:36:39.870897: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudnn64_7.dll
+2020-09-22 11:36:40.706917: W tensorflow/stream_executor/gpu/redzone_allocator.cc:314] Internal: Invoking GPU asm compilation is supported on Cuda non-Windows platforms only
+Relying on driver to perform ptx compilation.
+Modify $PATH to customize ptxas location.
+This message will be only logged once.
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._groundtruth_lists
+W0922 11:36:42.695488  4980 util.py:149] Unresolved object in checkpoint: (root).model._groundtruth_lists
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv
+W0922 11:36:42.696486  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor
+W0922 11:36:42.697484  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._maxpool_layer
+W0922 11:36:42.697484  4980 util.py:149] Unresolved object in checkpoint: (root).model._maxpool_layer
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor
+W0922 11:36:42.698481  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._batched_prediction_tensor_names
+W0922 11:36:42.699478  4980 util.py:149] Unresolved object in checkpoint: (root).model._batched_prediction_tensor_names
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model.endpoints
+W0922 11:36:42.699478  4980 util.py:149] Unresolved object in checkpoint: (root).model.endpoints
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer_with_weights-0
+W0922 11:36:42.700475  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer_with_weights-0
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer-1
+W0922 11:36:42.701473  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer-1
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer-2
+W0922 11:36:42.701473  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer-2
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads
+W0922 11:36:42.702470  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._sorted_head_names
+W0922 11:36:42.702470  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._sorted_head_names
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._shared_nets
+W0922 11:36:42.703467  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._shared_nets
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head
+W0922 11:36:42.704465  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head
+W0922 11:36:42.704465  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._third_stage_heads
+W0922 11:36:42.705462  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._third_stage_heads
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer_with_weights-0._inbound_nodes
+W0922 11:36:42.706459  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer_with_weights-0._inbound_nodes
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer_with_weights-0.kernel
+W0922 11:36:42.706459  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer_with_weights-0.kernel
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer_with_weights-0.bias
+W0922 11:36:42.707457  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer_with_weights-0.bias
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer-1._inbound_nodes
+W0922 11:36:42.708454  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer-1._inbound_nodes
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer-2._inbound_nodes
+W0922 11:36:42.708454  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor_first_conv.layer-2._inbound_nodes
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings
+W0922 11:36:42.709452  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background
+W0922 11:36:42.710449  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._shared_nets.0
+W0922 11:36:42.710449  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._shared_nets.0
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers
+W0922 11:36:42.711446  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers
+W0922 11:36:42.712443  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0
+W0922 11:36:42.715435  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0
+W0922 11:36:42.716433  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.0
+W0922 11:36:42.716433  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.0
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.1
+W0922 11:36:42.717430  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.1
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.2
+W0922 11:36:42.718427  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.2
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.0
+W0922 11:36:42.718427  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.0
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.1
+W0922 11:36:42.719425  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.1
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.2
+W0922 11:36:42.720422  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.2
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0._box_encoder_layers
+W0922 11:36:42.720422  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0._box_encoder_layers
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0._class_predictor_layers
+W0922 11:36:42.721420  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0._class_predictor_layers
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.1.kernel
+W0922 11:36:42.722417  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.1.kernel
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.1.bias
+W0922 11:36:42.722417  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._box_prediction_head._box_encoder_layers.1.bias
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.1.kernel
+W0922 11:36:42.723414  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.1.kernel
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.1.bias
+W0922 11:36:42.724411  4980 util.py:149] Unresolved object in checkpoint: (root).model._mask_rcnn_box_predictor._class_prediction_head._class_predictor_layers.1.bias
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0._box_encoder_layers.0
+W0922 11:36:42.724411  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0._box_encoder_layers.0
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0._class_predictor_layers.0
+W0922 11:36:42.725409  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0._class_predictor_layers.0
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0._box_encoder_layers.0.kernel
+W0922 11:36:42.726406  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0._box_encoder_layers.0.kernel
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0._box_encoder_layers.0.bias
+W0922 11:36:42.726406  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.box_encodings.0._box_encoder_layers.0.bias
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0._class_predictor_layers.0.kernel
+W0922 11:36:42.730395  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0._class_predictor_layers.0.kernel
+WARNING:tensorflow:Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0._class_predictor_layers.0.bias
+W0922 11:36:42.730395  4980 util.py:149] Unresolved object in checkpoint: (root).model._first_stage_box_predictor._prediction_heads.class_predictions_with_background.0._class_predictor_layers.0.bias
+WARNING:tensorflow:A checkpoint was restored (e.g. tf.train.Checkpoint.restore or tf.keras.Model.load_weights) but not all checkpointed values were used. See above for specific issues. Use expect_partial() on the load status object, e.g. tf.train.Checkpoint.restore(...).expect_partial(), to silence these warnings, or use assert_consumed() to make the check explicit. See https://www.tensorflow.org/guide/checkpoint#loading_mechanics for details.
+W0922 11:36:42.731393  4980 util.py:157] A checkpoint was restored (e.g. tf.train.Checkpoint.restore or tf.keras.Model.load_weights) but not all checkpointed values were used. See above for specific issues. Use expect_partial() on the load status object, e.g. tf.train.Checkpoint.restore(...).expect_partial(), to silence these warnings, or use assert_consumed() to make the check explicit. See https://www.tensorflow.org/guide/checkpoint#loading_mechanics for details.
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.239035  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.241030  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.243025  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.244022  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.245019  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.246016  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.248011  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.249009  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.250005  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+I0922 11:36:43.251003  4980 cross_device_ops.py:441] Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+WARNING:tensorflow:From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\deprecation.py:574: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Use fn_output_signature instead
+W0922 11:36:50.314215 14860 deprecation.py:500] From C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\deprecation.py:574: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Use fn_output_signature instead
+2020-09-22 11:37:26.158380: W tensorflow/core/common_runtime/bfc_allocator.cc:246] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.83GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-09-22 11:37:31.769860: W tensorflow/core/common_runtime/bfc_allocator.cc:246] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.83GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+INFO:tensorflow:Step 100 per-step time 0.581s loss=0.474
+I0922 11:39:59.012074  4980 model_lib_v2.py:649] Step 100 per-step time 0.581s loss=0.474
+INFO:tensorflow:Step 200 per-step time 2.779s loss=0.820
+I0922 11:49:22.852450  4980 model_lib_v2.py:649] Step 200 per-step time 2.779s loss=0.820
+INFO:tensorflow:Step 300 per-step time 2.284s loss=0.783
+I0922 11:52:10.251720  4980 model_lib_v2.py:649] Step 300 per-step time 2.284s loss=0.783
+INFO:tensorflow:Step 400 per-step time 0.545s loss=0.606
+I0922 11:54:28.918841  4980 model_lib_v2.py:649] Step 400 per-step time 0.545s loss=0.606
+INFO:tensorflow:Step 500 per-step time 0.571s loss=0.820
+I0922 11:57:11.741350  4980 model_lib_v2.py:649] Step 500 per-step time 0.571s loss=0.820
+INFO:tensorflow:Step 600 per-step time 0.574s loss=0.350
+I0922 11:59:41.356189  4980 model_lib_v2.py:649] Step 600 per-step time 0.574s loss=0.350
+INFO:tensorflow:Step 700 per-step time 2.122s loss=0.255
+I0922 12:02:31.236823  4980 model_lib_v2.py:649] Step 700 per-step time 2.122s loss=0.255
+INFO:tensorflow:Step 800 per-step time 2.502s loss=0.299
+I0922 12:05:06.086658  4980 model_lib_v2.py:649] Step 800 per-step time 2.502s loss=0.299
+INFO:tensorflow:Step 900 per-step time 0.441s loss=0.416
+I0922 12:08:01.638125  4980 model_lib_v2.py:649] Step 900 per-step time 0.441s loss=0.416
+INFO:tensorflow:Step 1000 per-step time 2.154s loss=0.674
+I0922 12:10:38.530498  4980 model_lib_v2.py:649] Step 1000 per-step time 2.154s loss=0.674
+INFO:tensorflow:Step 1100 per-step time 0.744s loss=0.367
+I0922 12:13:36.176364  4980 model_lib_v2.py:649] Step 1100 per-step time 0.744s loss=0.367
+INFO:tensorflow:Step 1200 per-step time 2.708s loss=0.311
+I0922 12:16:13.514544  4980 model_lib_v2.py:649] Step 1200 per-step time 2.708s loss=0.311
+INFO:tensorflow:Step 1300 per-step time 2.002s loss=0.509
+I0922 12:19:28.114067  4980 model_lib_v2.py:649] Step 1300 per-step time 2.002s loss=0.509
+INFO:tensorflow:Step 1400 per-step time 0.536s loss=0.235
+I0922 12:22:10.474339  4980 model_lib_v2.py:649] Step 1400 per-step time 0.536s loss=0.235
+INFO:tensorflow:Step 1500 per-step time 1.824s loss=0.342
+I0922 12:25:21.528117  4980 model_lib_v2.py:649] Step 1500 per-step time 1.824s loss=0.342
+INFO:tensorflow:Step 1600 per-step time 2.550s loss=0.323
+I0922 12:27:56.359004  4980 model_lib_v2.py:649] Step 1600 per-step time 2.550s loss=0.323
+INFO:tensorflow:Step 1700 per-step time 1.920s loss=0.321
+I0922 12:31:17.030969  4980 model_lib_v2.py:649] Step 1700 per-step time 1.920s loss=0.321
+INFO:tensorflow:Step 1800 per-step time 0.916s loss=0.223
+I0922 12:34:09.374754  4980 model_lib_v2.py:649] Step 1800 per-step time 0.916s loss=0.223
+INFO:tensorflow:Step 1900 per-step time 1.936s loss=0.369
+I0922 12:37:17.849656  4980 model_lib_v2.py:649] Step 1900 per-step time 1.936s loss=0.369
+INFO:tensorflow:Step 2000 per-step time 0.868s loss=0.263
+I0922 12:40:18.694963  4980 model_lib_v2.py:649] Step 2000 per-step time 0.868s loss=0.263
+INFO:tensorflow:Step 2100 per-step time 0.521s loss=0.155
+I0922 12:43:09.525057  4980 model_lib_v2.py:649] Step 2100 per-step time 0.521s loss=0.155
+INFO:tensorflow:Step 2200 per-step time 0.636s loss=0.193
+I0922 12:45:35.089728  4980 model_lib_v2.py:649] Step 2200 per-step time 0.636s loss=0.193
+INFO:tensorflow:Step 2300 per-step time 1.162s loss=0.163
+I0922 12:48:20.078448  4980 model_lib_v2.py:649] Step 2300 per-step time 1.162s loss=0.163
+INFO:tensorflow:Step 2400 per-step time 0.664s loss=0.164
+I0922 12:50:54.587195  4980 model_lib_v2.py:649] Step 2400 per-step time 0.664s loss=0.164
+INFO:tensorflow:Step 2500 per-step time 2.129s loss=0.500
+I0922 12:53:48.883019  4980 model_lib_v2.py:649] Step 2500 per-step time 2.129s loss=0.500
+INFO:tensorflow:Step 2600 per-step time 0.465s loss=0.259
+I0922 12:56:11.986272  4980 model_lib_v2.py:649] Step 2600 per-step time 0.465s loss=0.259
+INFO:tensorflow:Step 2700 per-step time 2.454s loss=0.168
+I0922 12:59:03.358917  4980 model_lib_v2.py:649] Step 2700 per-step time 2.454s loss=0.168
+INFO:tensorflow:Step 2800 per-step time 2.243s loss=0.177
+I0922 13:01:32.485147  4980 model_lib_v2.py:649] Step 2800 per-step time 2.243s loss=0.177
+INFO:tensorflow:Step 2900 per-step time 0.560s loss=0.116
+I0922 13:04:25.349801  4980 model_lib_v2.py:649] Step 2900 per-step time 0.560s loss=0.116
+INFO:tensorflow:Step 3000 per-step time 2.213s loss=0.142
+I0922 13:07:00.824963  4980 model_lib_v2.py:649] Step 3000 per-step time 2.213s loss=0.142
+INFO:tensorflow:Step 3100 per-step time 2.140s loss=0.151
+I0922 13:09:57.845500  4980 model_lib_v2.py:649] Step 3100 per-step time 2.140s loss=0.151
+INFO:tensorflow:Step 3200 per-step time 0.806s loss=0.091
+I0922 13:12:20.317442  4980 model_lib_v2.py:649] Step 3200 per-step time 0.806s loss=0.091
+INFO:tensorflow:Step 3300 per-step time 2.496s loss=0.142
+I0922 13:15:12.079046  4980 model_lib_v2.py:649] Step 3300 per-step time 2.496s loss=0.142
+INFO:tensorflow:Step 3400 per-step time 2.495s loss=0.074
+I0922 13:17:40.447218  4980 model_lib_v2.py:649] Step 3400 per-step time 2.495s loss=0.074
+INFO:tensorflow:Step 3500 per-step time 2.758s loss=0.115
+I0922 13:20:34.985394  4980 model_lib_v2.py:649] Step 3500 per-step time 2.758s loss=0.115
+INFO:tensorflow:Step 3600 per-step time 1.120s loss=0.071
+I0922 13:23:04.010810  4980 model_lib_v2.py:649] Step 3600 per-step time 1.120s loss=0.071
+INFO:tensorflow:Step 3700 per-step time 2.601s loss=0.092
+I0922 13:25:57.324261  4980 model_lib_v2.py:649] Step 3700 per-step time 2.601s loss=0.092
+INFO:tensorflow:Step 3800 per-step time 1.712s loss=0.121
+I0922 13:28:28.782170  4980 model_lib_v2.py:649] Step 3800 per-step time 1.712s loss=0.121
+INFO:tensorflow:Step 3900 per-step time 1.293s loss=0.074
+I0922 13:31:18.868253  4980 model_lib_v2.py:649] Step 3900 per-step time 1.293s loss=0.074
+INFO:tensorflow:Step 4000 per-step time 1.527s loss=0.086
+I0922 13:33:46.171274  4980 model_lib_v2.py:649] Step 4000 per-step time 1.527s loss=0.086
+INFO:tensorflow:Step 4100 per-step time 2.075s loss=0.097
+I0922 13:36:39.714684  4980 model_lib_v2.py:649] Step 4100 per-step time 2.075s loss=0.097
+INFO:tensorflow:Step 4200 per-step time 1.579s loss=0.079
+I0922 13:39:05.327224  4980 model_lib_v2.py:649] Step 4200 per-step time 1.579s loss=0.079
+INFO:tensorflow:Step 4300 per-step time 2.058s loss=0.059
+I0922 13:41:45.046039  4980 model_lib_v2.py:649] Step 4300 per-step time 2.058s loss=0.059
+INFO:tensorflow:Step 4400 per-step time 2.045s loss=0.102
+I0922 13:44:11.022608  4980 model_lib_v2.py:649] Step 4400 per-step time 2.045s loss=0.102
+INFO:tensorflow:Step 4500 per-step time 0.886s loss=0.100
+I0922 13:47:01.005967  4980 model_lib_v2.py:649] Step 4500 per-step time 0.886s loss=0.100
+INFO:tensorflow:Step 4600 per-step time 1.669s loss=0.103
+I0922 13:49:24.740531  4980 model_lib_v2.py:649] Step 4600 per-step time 1.669s loss=0.103
+INFO:tensorflow:Step 4700 per-step time 2.062s loss=0.103
+I0922 13:52:10.597927  4980 model_lib_v2.py:649] Step 4700 per-step time 2.062s loss=0.103
+INFO:tensorflow:Step 4800 per-step time 1.762s loss=0.166
+I0922 13:54:39.368023  4980 model_lib_v2.py:649] Step 4800 per-step time 1.762s loss=0.166
+INFO:tensorflow:Step 4900 per-step time 1.074s loss=0.101
+I0922 13:57:23.111073  4980 model_lib_v2.py:649] Step 4900 per-step time 1.074s loss=0.101
+INFO:tensorflow:Step 5000 per-step time 1.791s loss=0.108
+I0922 13:59:48.266839  4980 model_lib_v2.py:649] Step 5000 per-step time 1.791s loss=0.108
+INFO:tensorflow:Step 5100 per-step time 2.140s loss=0.094
+I0922 14:02:39.279444  4980 model_lib_v2.py:649] Step 5100 per-step time 2.140s loss=0.094
+INFO:tensorflow:Step 5200 per-step time 1.319s loss=0.084
+I0922 14:05:05.098433  4980 model_lib_v2.py:649] Step 5200 per-step time 1.319s loss=0.084
+INFO:tensorflow:Step 5300 per-step time 2.361s loss=0.168
+I0922 14:07:58.234362  4980 model_lib_v2.py:649] Step 5300 per-step time 2.361s loss=0.168
+INFO:tensorflow:Step 5400 per-step time 2.075s loss=0.097
+I0922 14:10:24.540050  4980 model_lib_v2.py:649] Step 5400 per-step time 2.075s loss=0.097
+Traceback (most recent call last):
+  File "../../models/research/object_detection/model_main_tf2.py", line 113, in <module>
+    tf.compat.v1.app.run()
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\platform\app.py", line 40, in run
+    _run(main=main, argv=argv, flags_parser=_parse_flags_tolerate_undef)
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\absl\app.py", line 300, in run
+    _run_main(main, args)
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\absl\app.py", line 251, in _run_main
+    sys.exit(main(argv))
+  File "../../models/research/object_detection/model_main_tf2.py", line 104, in main
+    model_lib_v2.train_loop(
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\object_detection\model_lib_v2.py", line 639, in train_loop
+    loss = _dist_train_step(train_input_iter)
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\eager\def_function.py", line 780, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\eager\def_function.py", line 807, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\eager\function.py", line 2829, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\eager\function.py", line 1843, in _filtered_call
+    return self._call_flat(
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\eager\function.py", line 1923, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\eager\function.py", line 545, in call
+    outputs = execute.execute(
+  File "C:\Users\Thesis\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+KeyboardInterrupt

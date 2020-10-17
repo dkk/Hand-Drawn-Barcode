@@ -1,0 +1,10 @@
+
+#train
+python ../../models/research/object_detection/model_main_tf2.py --alsologtostderr --model_dir=models/efficientdet_d2_coco17_tpu-32 --checkpoint_every_n=200 --pipeline_config_path=models/efficientdet_d2_coco17_tpu-32/pipeline.config
+
+#eval
+set CUDA_VISIBLE_DEVICES="-1"
+python ../../models/research/object_detection/model_main_tf2.py --alsologtostderr --model_dir=models/efficientdet_d2_coco17_tpu-32/ --pipeline_config_path=models/efficientdet_d2_coco17_tpu-32/pipeline.config --checkpoint_dir=models/efficientdet_d2_coco17_tpu-32/
+
+#tensorboard
+>tensorboard --logdir=models/efficientdet_d2_coco17_tpu-32/

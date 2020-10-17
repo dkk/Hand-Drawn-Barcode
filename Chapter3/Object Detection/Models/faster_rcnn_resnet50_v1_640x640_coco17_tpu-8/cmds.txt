@@ -1,0 +1,10 @@
+
+#train
+python ../../models/research/object_detection/model_main_tf2.py --alsologtostderr --model_dir=models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8 --checkpoint_every_n=200 --pipeline_config_path=models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/pipeline.config
+
+#eval
+set CUDA_VISIBLE_DEVICES="-1"
+python ../../models/research/object_detection/model_main_tf2.py --alsologtostderr --model_dir=models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/ --pipeline_config_path=models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/pipeline.config --checkpoint_dir=models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/
+
+#tensorboard
+>tensorboard --logdir=models/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/
