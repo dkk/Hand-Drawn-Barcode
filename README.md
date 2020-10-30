@@ -1,6 +1,6 @@
 # Hand-Drawn-Barcode
 
-This repository is related to the master thesis "A Hand-Drawn Barcode", submitted in partial fulfillment of the requirements for the degree of "Master in Artificial Intelligence and Depp Learning" at the University at Alcalá by Daniel Klöck on October 2020.
+This repository is related to the master thesis "A Hand-Drawn Barcode", submitted in partial fulfillment of the requirements for the degree of "Master in Artificial Intelligence and Depp Learning" at the University of Alcalá by Daniel Klöck on October 2020.
 
 It contains:
 * [Hand-Drawn Barcodes Dataset](./Hand-Drawn%20Barcodes%20Dataset): A dataset of cleaned annotated images of hand-drawn barcodes, collected using the ["Hand-drawn Barcode User Study" webpage](https://barcode-dataset-generator.herokuapp.com/) between August 27th and 31st 2020.
